@@ -52,6 +52,10 @@ app.get('/', async(req: Request, res: Response) => {
   } );
   
 
+  app.get("*", (req: Request, res: Response) => {
+    res.status(404).send("404 Not Found");
+  });
+  
   // Start the Server
   app.listen( port, () => {
       console.log( `server running http://localhost:${ port }` );
